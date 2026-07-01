@@ -1,0 +1,103 @@
+@media (max-width: 980px) {
+  .section-with-rail {
+    grid-template-columns: 1fr;
+  }
+
+  .section-rail {
+    position: static;
+    max-height: none;
+  }
+
+  .nav-dock {
+    top: auto;
+    bottom: 1rem;
+    right: 50%;
+    transform: translateX(50%);
+  }
+
+  .nav-dock ul {
+    flex-direction: row;
+    gap: 0.4rem;
+    background: var(--panel-strong);
+    border: 1px solid var(--border-strong);
+    border-radius: 999px;
+    padding: 0.4rem;
+  }
+
+  .nav-dock-label {
+    display: none;
+  }
+
+  .nav-dock a {
+    padding: 0.5rem;
+  }
+
+  .hero-scroll-sticky {
+    padding-left: var(--content-pad);
+  }
+
+  .mission-brief-stats,
+  .skills-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-channel-card {
+    min-height: 104px;
+  }
+
+  .contact-channel-value {
+    font-size: 0.92rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .skip-button {
+    bottom: 1rem;
+    right: 1rem;
+  }
+
+  .experience-timeline {
+    gap: 0.95rem;
+  }
+
+  .experience-item {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-marker {
+    display: none;
+  }
+
+  .docking-bay-grid,
+  .research-list,
+  .education-list,
+  .skills-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-modal {
+    padding: 1.1rem;
+  }
+
+  .hero-headline {
+    max-width: 100%;
+  }
+
+  .hero-bullet-list {
+    gap: 0.5rem;
+  }
+
+  .hero-metric-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-summary {
+    padding: 1rem 1rem;
+  }
+
+  .contact-channel-card {
+    padding: 1.05rem;
+  }
+}

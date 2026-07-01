@@ -1,0 +1,26 @@
+
+.panel {
+  background: linear-gradient(180deg, rgba(11, 17, 27, 0.88), rgba(8, 12, 20, 0.76));
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(16px);
+  box-shadow: var(--shadow-soft);
+  transition: border-color var(--duration-base) var(--ease-out),
+    transform var(--duration-base) var(--ease-out),
+    background var(--duration-base) var(--ease-out);
+}
+
+.panel:hover {
+  border-color: var(--border-strong);
+  background: linear-gradient(180deg, rgba(12, 18, 29, 0.92), rgba(8, 12, 20, 0.82));
+}
+
+.docking-bay-card.panel:hover,
+.research-card.panel:hover,
+.education-card.panel:hover,
+.experience-content.panel:hover,
+.contact-channel-card.panel:hover,
+.hover-detail-rail.panel:hover,
+.contact-summary.panel:hover {
+  transform: translateY(-3px);
+}

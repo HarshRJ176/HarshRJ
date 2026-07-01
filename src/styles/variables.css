@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+:root {
+  color-scheme: dark;
+
+  /* Surfaces */
+  --bg: #02070d;
+  --bg-soft: #07111d;
+  --panel: rgba(10, 16, 26, 0.78);
+  --panel-strong: rgba(8, 13, 22, 0.92);
+  --border: rgba(180, 212, 244, 0.12);
+  --border-strong: rgba(180, 212, 244, 0.24);
+
+  /* Text */
+  --text: rgba(250, 252, 255, 0.98);
+  --text-soft: rgba(228, 235, 244, 0.9);
+  --text-faint: rgba(179, 193, 212, 0.62);
+
+  /* Accent */
+  --accent: #67dcff;
+  --accent-2: #9aa6ff;
+  --accent-rgb: 103, 220, 255;
+  --gold: #d9ba76;
+  --gold-rgb: 217, 186, 118;
+
+  /* Status */
+  --status-ok: #6ee7a8;
+  --status-progress: #d9ba76;
+  --status-archived: rgba(255, 255, 255, 0.42);
+
+  /* Elevation */
+  --shadow-soft: 0 18px 54px rgba(0, 0, 0, 0.36);
+  --shadow-strong: 0 30px 90px rgba(0, 0, 0, 0.5);
+
+  /* Radii */
+  --radius-sm: 10px;
+  --radius-md: 18px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+
+  /* Layout */
+  --max-width: 1180px;
+  --content-pad: clamp(1.15rem, 3.5vw, 2.8rem);
+  --section-gap: clamp(4.5rem, 13vw, 9rem);
+
+  /* Fonts */
+  --font-body: 'Manrope', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-display: 'Sora', 'Manrope', ui-sans-serif, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'SFMono-Regular', ui-monospace, monospace;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast: 0.2s;
+  --duration-base: 0.4s;
+  --duration-slow: 0.8s;
+
+  /* Z-index scale */
+  --z-scene: 0;
+  --z-ui: 10;
+  --z-overlay: 40;
+  --z-nav: 30;
+
+  font-synthesis: none;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
