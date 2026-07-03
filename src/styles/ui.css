@@ -19,8 +19,6 @@
 .research-card.panel:hover,
 .education-card.panel:hover,
 .experience-content.panel:hover,
-.contact-channel-card.panel:hover,
-.hover-detail-rail.panel:hover,
-.contact-summary.panel:hover {
+.hover-detail-rail.panel:hover {
   transform: translateY(-3px);
 }

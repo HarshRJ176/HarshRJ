@@ -19,10 +19,8 @@ export const research: ResearchEntry[] = [
     status: 'In preparation — strengthening validation, figures, and comparison tables before submission.',
     targets: ['AIAA SciTech', 'Aircraft Engineering and Aerospace Technology', 'Drones (MDPI)'],
     details: [
-      'The paper should stay tied to structural evidence, not just the project narrative.',
-      'Best suited for submission after the figures and validation notes are finalised.',
-      'This is the cleaner of the two paper tracks for a structural or UAV-focused review.',
-      'The strongest contribution is the method used to justify mass removal while retaining usable stiffness.',
+      'Central contribution is the method used to justify targeted mass removal while retaining usable stiffness margins.',
+      'Structural evidence — load paths, stress concentration data, and validation notes — anchors the paper’s argument.',
     ],
   },
   {
@@ -33,10 +31,8 @@ export const research: ResearchEntry[] = [
     status: 'Drafting — finalising comparison tables and simulation outputs.',
     targets: ['Aerospace Science and Technology', 'Journal of Aerospace Engineering', 'Aerospace'],
     details: [
-      'This paper works best as a systems-level contribution rather than a pure geometry study.',
-      'The strongest angle is the power-management logic and endurance-extension story.',
-      'Keep it as the second major paper and let the figures do the technical heavy lifting.',
-      'A clean comparison table should show why the chosen power logic is worth publishing.',
+      'Systems-level contribution centered on power-management logic and the endurance-extension strategy.',
+      'Comparison tables are being prepared to substantiate the chosen power-management approach against baseline strategies.',
     ],
   },
 ];

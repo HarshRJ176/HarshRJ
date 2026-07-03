@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type RefObject } from 'react';
+import { useCallback, useEffect, useRef, useState, type RefObject } from 'react';
 import gsap from 'gsap';
 
 import { openingBeats, type OpeningStage } from '../config/timeline.config';
@@ -23,20 +23,23 @@ export function useOpeningTimeline(
   const [openingComplete, setOpeningComplete] = useState(false);
   const timelineRef = useRef<gsap.core.Timeline | null>(null);
 
-  const completeOpening = (targetStage: OpeningStage = 'scrollEnabled') => {
-    flightState.openingComplete = true;
-    completeFlightState();
-    setStage(targetStage);
-    setOpeningComplete(true);
-    timelineRef.current?.kill();
-    timelineRef.current = null;
+  const completeOpening = useCallback(
+    (targetStage: OpeningStage = 'scrollEnabled') => {
+      flightState.openingComplete = true;
+      completeFlightState();
+      setStage(targetStage);
+      setOpeningComplete(true);
+      timelineRef.current?.kill();
+      timelineRef.current = null;
 
-    if (heroTextRef?.current) {
-      heroTextRef.current.style.opacity = '1';
-      heroTextRef.current.style.visibility = 'visible';
-      heroTextRef.current.style.transform = 'none';
-    }
-  };
+      if (heroTextRef?.current) {
+        heroTextRef.current.style.opacity = '1';
+        heroTextRef.current.style.visibility = 'visible';
+        heroTextRef.current.style.transform = 'none';
+      }
+    },
+    [heroTextRef],
+  );
 
   useEffect(() => {
     if (prefersReducedMotion) {
@@ -112,7 +115,7 @@ export function useOpeningTimeline(
       tl.kill();
       timelineRef.current = null;
     };
-  }, [prefersReducedMotion, heroTextRef]);
+  }, [prefersReducedMotion, heroTextRef, completeOpening]);
 
   const skip = () => {
     completeOpening();

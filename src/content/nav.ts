@@ -9,7 +9,7 @@ export interface MissionSection {
  * Navigation order for the updated recruiter-facing structure.
  */
 export const missionSections: MissionSection[] = [
-  { id: 'mission-brief', label: 'Professional Overview', code: '01' },
+  { id: 'mission-brief', label: 'About Me', code: '01' },
   { id: 'experience', label: 'Experience', code: '02' },
   { id: 'education', label: 'Education', code: '03' },
   { id: 'projects', label: 'Projects', code: '04' },

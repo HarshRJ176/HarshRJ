@@ -31,7 +31,7 @@ export function ResearchArchive() {
 
   return (
     <section id="research" ref={sectionRef} className="mission-section">
-      <SectionHeading code="LIVE" kicker="Research" title="Research Archive" />
+      <SectionHeading code="05" kicker="Research" title="Research Archive" />
 
       <div className="section-with-rail">
         <div className="section-main">

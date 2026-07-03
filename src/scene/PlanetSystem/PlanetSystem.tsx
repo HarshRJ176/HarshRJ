@@ -7,8 +7,10 @@ import { flightState } from '../../engine/flightState';
 import { lerp } from '../../utils/math';
 import { Earth } from './Earth';
 import { Clouds } from './Clouds';
+import { Atmosphere } from './Atmosphere';
 import { Satellite } from './Satellite';
 import { OrbitalPath } from './OrbitalPath';
+import { OrbitMarkers } from './OrbitMarkers';
 
 /**
  * Shared transform for the planet layers and the orbital relay.
@@ -34,8 +36,10 @@ export function PlanetSystem() {
   return (
     <group ref={groupRef} position={earthConfig.introPosition} rotation={[0, 0, earthConfig.axialTilt]}>
       <OrbitalPath />
+      <OrbitMarkers />
       <Earth />
       <Clouds />
+      <Atmosphere />
       <Satellite />
     </group>
   );

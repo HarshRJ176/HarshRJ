@@ -37,7 +37,7 @@ export function ProjectsDockingBays() {
 
   return (
     <section id="projects" ref={sectionRef} className="mission-section">
-      <SectionHeading code="LIVE" kicker="Projects" title="Selected Work" />
+      <SectionHeading code="04" kicker="Projects" title="Selected Work" />
 
       <div className="section-with-rail">
         <div className="section-main">

@@ -29,6 +29,14 @@ export interface FlightState {
 
   // --- Scroll narrative (SAIS Section 7), 0..1 across the hero scroll span ---
   scrollProgress: number;
+
+  /**
+   * Index (0-based) of the mission section currently in view, written by
+   * useActiveSection (DOM/IntersectionObserver) and read by OrbitMarkers
+   * in the 3D scene — this is how scroll position on the page drives
+   * which orbital marker glows.
+   */
+  activeSectionIndex: number;
 }
 
 export const flightState: FlightState = {
@@ -41,6 +49,7 @@ export const flightState: FlightState = {
   earthIdleSpin: 0,
   openingComplete: false,
   scrollProgress: 0,
+  activeSectionIndex: 0,
 };
 
 /** Resets everything to the pre-launch state. Used by reduced-motion skip. */

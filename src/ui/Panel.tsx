@@ -1,4 +1,4 @@
-import type { HTMLAttributes, ReactNode } from 'react';
+import type { ElementType, HTMLAttributes, ReactNode } from 'react';
 
 interface PanelProps extends HTMLAttributes<HTMLElement> {
   children: ReactNode;
@@ -7,7 +7,7 @@ interface PanelProps extends HTMLAttributes<HTMLElement> {
 }
 
 export function Panel({ children, className = '', as = 'div', ...rest }: PanelProps) {
-  const Tag = as as any;
+  const Tag: ElementType = as;
   return (
     <Tag className={`panel ${className}`.trim()} {...rest}>
       {children}

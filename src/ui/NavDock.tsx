@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 
+import { profile } from '../content/profile';
 import { missionSections } from '../content/nav';
 import { useActiveSection } from '../hooks/useActiveSection';
 
@@ -12,14 +13,22 @@ export function NavDock({ visible }: NavDockProps) {
 
   if (!visible) return null;
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <motion.nav
       className="nav-dock"
       aria-label="Mission sections"
-      initial={{ opacity: 0, x: 24 }}
-      animate={{ opacity: 1, x: 0 }}
+      initial={{ opacity: 0, y: -16 }}
+      animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
     >
+      <button type="button" className="nav-dock-brand" onClick={scrollToTop}>
+        {profile.callsign}
+      </button>
+
       <ul>
         {missionSections.map((section) => (
           <li key={section.id}>

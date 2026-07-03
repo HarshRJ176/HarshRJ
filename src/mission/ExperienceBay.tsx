@@ -36,7 +36,7 @@ export function ExperienceBay() {
 
   return (
     <section id="experience" ref={sectionRef} className="mission-section">
-      <SectionHeading code="LIVE" kicker="Experience" title="Maintenance Log" />
+      <SectionHeading code="02" kicker="Experience" title="Maintenance Log" />
 
       <div className="section-with-rail">
         <div className="section-main">

@@ -8,8 +8,15 @@ export interface EducationEntry {
 }
 
 /**
- * Academic track in chronological order. The class 12 entry is kept editable
- * so you can replace the exact school/board/percentage before publication.
+ * Academic track in chronological order.
+ *
+ * NOTE: a Class 12 entry was here with placeholder text ("Update exact
+ * school and board before publishing") and was live on the deployed site.
+ * Removed rather than shipped incomplete — add it back with your real
+ * institution, board, and result once you have them:
+ *
+ *   { id: 'class-12', period: '...', title: 'Higher Secondary Education',
+ *     institution: '<your school>', summary: '<board + result>', details: [...] }
  */
 export const education: EducationEntry[] = [
   {
@@ -21,18 +28,6 @@ export const education: EducationEntry[] = [
     details: [
       'Built the early academic foundation that later supported engineering study.',
       'Strong performance in quantitative subjects helped prepare for aerospace coursework.',
-    ],
-  },
-  {
-    id: 'class-12',
-    period: 'Pre-university stage',
-    title: 'Higher Secondary Education',
-    institution: 'Update exact school and board before publishing',
-    summary:
-      'Pre-university science foundation in mathematics and physics. Replace this line with your exact Class 12 institution and marks before final publication.',
-    details: [
-      'Keep this entry in the timeline so the full academic path reads clearly for recruiters.',
-      'Edit the institution, board, and score once you want the site to go public.',
     ],
   },
   {

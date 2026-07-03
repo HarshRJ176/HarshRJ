@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 
 interface DetailModalProps {
@@ -10,6 +11,26 @@ interface DetailModalProps {
 }
 
 export function DetailModal({ open, title, subtitle, description, bullets, onClose }: DetailModalProps) {
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const previouslyFocused = useRef<HTMLElement | null>(null);
+
+  useEffect(() => {
+    if (!open) return;
+
+    previouslyFocused.current = document.activeElement as HTMLElement | null;
+    closeButtonRef.current?.focus();
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') onClose();
+    };
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      previouslyFocused.current?.focus();
+    };
+  }, [open, onClose]);
+
   return (
     <AnimatePresence>
       {open && (
@@ -17,6 +38,7 @@ export function DetailModal({ open, title, subtitle, description, bullets, onClo
           className="detail-modal-backdrop"
           role="dialog"
           aria-modal="true"
+          aria-label={title}
           onClick={onClose}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -36,7 +58,13 @@ export function DetailModal({ open, title, subtitle, description, bullets, onClo
                 <h3>{title}</h3>
                 {subtitle && <p className="detail-modal-subtitle">{subtitle}</p>}
               </div>
-              <button type="button" className="detail-modal-close" onClick={onClose} aria-label="Close details">
+              <button
+                type="button"
+                ref={closeButtonRef}
+                className="detail-modal-close"
+                onClick={onClose}
+                aria-label="Close details"
+              >
                 ×
               </button>
             </div>

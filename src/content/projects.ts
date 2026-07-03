@@ -21,9 +21,8 @@ export const projects: Project[] = [
       'Structural optimisation study for a lightweight solar UAV frame, focused on mass reduction while keeping stiffness and load paths within acceptable flight margins.',
     details: [
       'Mapped load paths and stress concentration zones to identify where material could be removed without collapsing stiffness.',
-      'Used the study to support a lightweight design decision rather than treating FEA as a visual add-on.',
+      'Used the analysis to drive an actual lightweight design decision, not as a standalone visual exercise.',
       'Prepared the work as publication-track output with comparison figures, validation notes, and reproducible assumptions.',
-      'This is the strongest structural-analysis item in the portfolio and should stay near the top of the list.',
     ],
     stack: ['FEA', 'Structural Optimisation', 'PLA', 'Lightweight Design'],
     status: 'operational',
@@ -36,9 +35,9 @@ export const projects: Project[] = [
       'Capstone-level conceptual and performance evaluation of a solar-powered UAV, used to consolidate airframe, propulsion, endurance, and system thinking into one project narrative.',
     details: [
       'Combined the UAV concept with power-budget logic, endurance estimation, and performance interpretation.',
-      'Used as the senior-level design synthesis project from Chandigarh University.',
-      'Provided a bridge between raw design work and publication-oriented analysis.',
-      'Shows systems thinking because it connects geometry, propulsion, energy, and mission intent in one frame.',
+      'Senior-level design synthesis project completed at Chandigarh University.',
+      'Bridged raw conceptual design work with publication-oriented analysis.',
+      'Connected geometry, propulsion, energy budget, and mission intent into a single integrated design frame.',
     ],
     stack: ['Capstone', 'Performance Evaluation', 'Systems Integration', 'Solar UAV'],
     status: 'operational',
@@ -51,9 +50,7 @@ export const projects: Project[] = [
       'Propulsion geometry study focused on dual-bell transition behaviour, flow separation control, and performance across pressure regimes.',
     details: [
       'Studied how nozzle shape affects flow switching, separation behaviour, and performance stability.',
-      'Built as a comparative extension to the nozzle work already in the portfolio.',
-      'Useful for showing that the propulsion interest is not isolated to a single geometry.',
-      'Keep this project concise but technically dense for recruiter review.',
+      'Extended earlier nozzle propulsion work into dual-bell transition behaviour specifically.',
     ],
     stack: ['Nozzle Design', 'Flow Separation', 'Performance Analysis', 'CFD'],
     status: 'in-development',
@@ -67,8 +64,6 @@ export const projects: Project[] = [
     details: [
       'Used the study to understand how the aerospike concept behaves relative to conventional nozzles.',
       'Focused on flow structure, pressure-ratio sweep logic, and thrust interpretation.',
-      'Strong technical item for roles that value propulsion fundamentals and pressure-compensating geometry.',
-      'Keep the wording technical and avoid over-selling the result.',
     ],
     stack: ['CFD', 'Cold-Flow Analysis', 'Fluid Mechanics', 'ANSYS', 'Propulsion'],
     status: 'operational',
@@ -80,10 +75,8 @@ export const projects: Project[] = [
     summary:
       'Conceptual aircraft design study using a hydrogen propulsion architecture for a short-range transport mission, with emphasis on configuration trade-offs and mass balance.',
     details: [
-      'Served as conceptual design practice for aircraft-level trade studies.',
+      'Applied conceptual design methods to aircraft-level trade studies.',
       'Built judgment around configuration, payload, range, and viability constraints.',
-      'Shows that the portfolio can handle whole-aircraft reasoning, not just subsystem analysis.',
-      'The explanation should stay focused on design logic and mission constraints.',
     ],
     stack: ['Conceptual Design', 'Aircraft Sizing', 'Mission Analysis', 'Trade Studies'],
     status: 'archived',
@@ -95,10 +88,8 @@ export const projects: Project[] = [
     summary:
       'End-to-end solar UAV concept covering airframe sizing, propulsion matching, power budgeting, endurance reasoning, and CFD-led iteration for a lightweight mission profile.',
     details: [
-      'One of the best aerospace projects for showing integrated analysis across design, power, and flight intent.',
-      'Useful for proving the ability to move from concept to implementation logic.',
-      'Keep this entry as the oldest major design work so the chronology reads cleanly.',
-      'Strong match for UAV, flight systems, and simulation-oriented roles.',
+      'Integrated airframe, propulsion, and power-budget analysis into a single design-to-implementation workflow.',
+      'CFD-led iteration on the airframe shape supported the final lightweight mission profile.',
     ],
     stack: ['SolidWorks', 'ANSYS Fluent', 'CFD', 'Power Budgeting', 'UAV Design'],
     status: 'operational',

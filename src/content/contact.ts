@@ -46,4 +46,4 @@ export const contactChannels: ContactChannel[] = [
     value: 'Download PDF',
     href: profile.contact.resume,
   },
-];
+].filter((channel) => channel.value.trim().length > 0);

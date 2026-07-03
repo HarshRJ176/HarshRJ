@@ -25,29 +25,28 @@ const fragmentShader = /* glsl */ `
   varying vec3 vViewDir;
 
   void main() {
-    // Limb glow: brightest where the surface normal grazes the view
-    // direction (edge of the sphere), near-invisible facing the camera.
-    float rim = pow(1.0 - clamp(dot(vWorldNormal, vViewDir), 0.0, 1.0), 2.2);
+    // Sharp falloff (power 4.5) keeps this to a thin sliver right at the
+    // silhouette edge, not a visible ring/outline circling the whole disc.
+    float rim = pow(1.0 - clamp(dot(vWorldNormal, vViewDir), 0.0, 1.0), 4.5);
 
-    // Sun alignment: 1.0 on the sunlit side of the planet, 0.0 on the
-    // far/night side. This is what turns a flat ring into a directional
-    // "sunrise" glow that only reads brightly on one side.
+    // Sun alignment: 1.0 on the sunlit side, 0.0 on the far/night side —
+    // keeps the glow to a soft crescent rather than a full halo.
     float sunFactor = clamp(dot(vWorldNormal, uLightDir) * 0.5 + 0.5, 0.0, 1.0);
-    sunFactor = pow(sunFactor, 1.4);
+    sunFactor = pow(sunFactor, 1.8);
 
     vec3 color = mix(uColorShadow, uColorLit, sunFactor);
-    float intensity = rim * mix(0.03, 0.7, sunFactor);
+    float intensity = rim * mix(0.015, 0.32, sunFactor);
 
     gl_FragColor = vec4(color, intensity * uOpacity);
   }
 `;
 
 /**
- * Earth's atmospheric limb glow (SAIS Section 1). Intensity is driven by
- * BOTH a view-dependent Fresnel term (so it only reads at the edges, never
- * across the face) AND the sun's direction relative to the planet, so the
- * glow is warm and bright on the lit side and cool/faint on the shadow
- * side — a directional "sunrise" effect rather than a flat colored ring.
+ * Earth's atmospheric limb glow. Deliberately subtle and blue-only —
+ * no near-white tones — so it never reads as a bright outline/border at
+ * the sphere's edge, just a faint sunlit haze. Intensity is capped low
+ * and the Fresnel falloff is sharp so it only shows right at the
+ * silhouette, not as a ring around the whole disc.
  */
 export function Atmosphere() {
   const meshRef = useRef<THREE.Mesh>(null);
@@ -58,8 +57,8 @@ export function Atmosphere() {
 
   const uniforms = useMemo(
     () => ({
-      uColorLit: { value: new THREE.Color('#f7edd7') },
-      uColorShadow: { value: new THREE.Color('#345ea8') },
+      uColorLit: { value: new THREE.Color('#7fb8e0') },
+      uColorShadow: { value: new THREE.Color('#1c3f6e') },
       uLightDir: { value: new THREE.Vector3(0, 0, 1) },
       uOpacity: { value: 0 },
     }),

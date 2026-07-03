@@ -45,7 +45,7 @@
   align-items: flex-start;
   justify-content: flex-start;
   padding: var(--content-pad);
-  padding-top: clamp(2.4rem, 9vh, 5.8rem);
+  padding-top: clamp(4.75rem, 12vh, 7.5rem);
   padding-left: clamp(1.25rem, 4vw, 4rem);
   isolation: isolate;
 }

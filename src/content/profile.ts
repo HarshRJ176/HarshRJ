@@ -5,6 +5,7 @@
  */
 
 import resumePdf from './resume.pdf';
+import harshrj from './HarshRJ.jpg';
 
 export interface ProfileMetric {
   label: string;
@@ -22,21 +23,20 @@ export interface ContactProfile {
 }
 
 export const profile = {
+  image: harshrj,
   name: 'Harsh Raj Jaiswal',
-  callsign: 'H. R. JAISWAL',
+  callsign: 'Harsh Raj Jaiswal',
   role: 'Aerospace Engineer',
-  focus: 'Orbital Mechanics · CFD · Structural Analysis · UAV Systems',
+  focus: 'Orbital Mechanics  ·  CFD  ·  Aerodynamics  ·  UAV Systems',
   location: 'Kathmandu, Nepal',
   education: 'B.E. Aerospace Engineering, Chandigarh University — Class of 2025',
   heroHeadline:
-    'Simulation-led aerospace work spanning orbital mechanics, CFD, structures, and UAV systems. The portfolio is built so recruiters can read the profile in under a minute, then inspect the evidence below.',
+    'Simulation-led aerospace engineering across orbital mechanics, CFD, structural analysis, and UAV systems',
   heroBullets: [
-    'B.E. Aerospace Engineering, Chandigarh University, Class of 2025 — aerospace foundation across aerodynamics, propulsion, flight mechanics, structures, and orbital mechanics.',
-    'Engineering Maintenance Intern at Nepal Airlines Corporation — documentation, line-workflow discipline, and transport-aircraft exposure.',
-    'Research and projects focus on solar UAVs, nozzle studies, structural optimisation, and publication-track writing.',
+    '',
   ],
   missionBrief:
-    'This portfolio keeps the story technical and compact: first the profile, then the evidence. The sections below document academic work, internship exposure, research direction, and the tools used to support each result.',
+    'A simulation-first approach to aerospace engineering: model the system, run the analysis, validate against real constraints. Work spans structural analysis, CFD, orbital mechanics, and UAV power systems, backed by hands-on maintenance experience with transport aircraft at Nepal Airlines Corporation.',
   missionCards: [
     {
       label: 'Method',
@@ -53,11 +53,11 @@ export const profile = {
   ] satisfies ProfileMetric[],
   contact: {
     address: 'Kathmandu, Nepal',
-    phone: '+977 98XXXXXXXX',
-    email: 'harsh.raj.jaiswal@harshj.com.np',
-    website: 'harshj.com.np',
-    github: 'github.com/harsh-raj-jaiswal',
-    linkedin: 'linkedin.com/in/harsh-raj-jaiswal',
+    phone: '+977 9821136610',
+    email: 'harshrajjaiswal176@gmail.com',
+    website: 'harshrajjaiswal.com.np',
+    github: 'github.com/HarshRJ176',
+    linkedin: 'linkedin.com/in/harshrj',
     resume: resumePdf,
   } satisfies ContactProfile,
 } as const;
