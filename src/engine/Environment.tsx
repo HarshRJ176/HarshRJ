@@ -14,7 +14,7 @@ import { SunGlow } from '../scene/SunGlow';
 export function Environment() {
   return (
     <>
-      <DreiEnvironment files={assetPaths.spaceHdr} background={false} />
+      <DreiEnvironment files={assetPaths.spaceEnv} background={false} />
       <Starfield />
       <Nebula />
       <SunGlow />

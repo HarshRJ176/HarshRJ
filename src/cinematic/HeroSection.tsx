@@ -1,15 +1,17 @@
 import { forwardRef, type RefObject } from 'react';
 
 import { profile } from '../content/profile';
+import { HeroPhoto } from './HeroPhoto';
 
 interface HeroSectionProps {
   heroTextRef: RefObject<HTMLDivElement | null>;
 }
 
 /**
- * The hero is the primary recruiter-facing summary block.
- * It stays visible immediately so the page reads fast even while the
- * opening cinematic completes in the background.
+ * The hero is the primary recruiter-facing summary block — kept
+ * deliberately tight. Full detail (degree specifics, internship
+ * description, research areas) lives in the Education/Experience/Research
+ * sections below; this is the 5-second scan, not a second resume.
  */
 export const HeroSection = forwardRef<HTMLElement, HeroSectionProps>(function HeroSection(
   { heroTextRef },
@@ -19,6 +21,8 @@ export const HeroSection = forwardRef<HTMLElement, HeroSectionProps>(function He
     <section ref={triggerRef} className="hero-scroll-span" aria-label="Introduction">
       <div className="hero-scroll-sticky">
         <div ref={heroTextRef} className="hero-copy">
+          <HeroPhoto />
+
           <p className="hero-eyebrow">Professional Summary</p>
           <h1 className="hero-name">{profile.name}</h1>
           <p className="hero-role">
@@ -34,16 +38,12 @@ export const HeroSection = forwardRef<HTMLElement, HeroSectionProps>(function He
 
           <div className="hero-metric-grid" aria-label="Quick profile facts">
             <div>
-              <span className="hero-metric-value">{profile.education}</span>
-              <span className="hero-metric-label">Degree</span>
-            </div>
-            <div>
               <span className="hero-metric-value">{profile.location}</span>
               <span className="hero-metric-label">Base</span>
             </div>
             <div>
-              <span className="hero-metric-value">Research + portfolio phase</span>
-              <span className="hero-metric-label">Current focus</span>
+              <span className="hero-metric-value">Research + Applications</span>
+              <span className="hero-metric-label">Currently</span>
             </div>
           </div>
         </div>

@@ -6,13 +6,13 @@
 import earthDay from '../assets/textures/earth/earth_day.jpg';
 import earthClouds from '../assets/textures/earth/earth_clouds.jpg';
 import earthNormal from '../assets/textures/earth/earth_normal.jpg';
-import spaceHdr from '../assets/hdr/space.hdr';
+import spaceEnv from '../assets/env/space.jpg';
 
 export const assetPaths = {
   earthDay,
   earthClouds,
   earthNormal,
-  spaceHdr,
+  spaceEnv,
 } as const;
 
 export const earthConfig = {

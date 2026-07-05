@@ -1,7 +1,5 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, lazy, Suspense } from 'react';
 
-import { SceneCanvas } from './engine/SceneCanvas';
-import { WorldRoot } from './engine/WorldRoot';
 import { useOpeningTimeline } from './cinematic/useOpeningTimeline';
 import { useScrollNarrative } from './cinematic/useScrollNarrative';
 import { OpeningOverlay } from './cinematic/OpeningOverlay';
@@ -15,6 +13,8 @@ import { ProjectsDockingBays } from './mission/ProjectsDockingBays';
 import { ResearchArchive } from './mission/ResearchArchive';
 import { OrbitalSkillsNetwork } from './mission/OrbitalSkillsNetwork';
 import { ContactTerminal } from './mission/ContactTerminal';
+
+const Scene3D = lazy(() => import('./engine/Scene3D').then((m) => ({ default: m.Scene3D })));
 
 export function App() {
   const heroTriggerRef = useRef<HTMLElement | null>(null);
@@ -37,9 +37,9 @@ export function App() {
   return (
     <div className="app-engine">
       <div className="scene-canvas-mount">
-        <SceneCanvas>
-          <WorldRoot />
-        </SceneCanvas>
+        <Suspense fallback={null}>
+          <Scene3D />
+        </Suspense>
       </div>
 
       <OpeningOverlay stage={stage} onSkip={skip} />
