@@ -57,7 +57,7 @@ export const profile = {
   contact: {
     address: 'Kathmandu, Nepal',
     phone: '+977 9821136610',
-    email: 'harsh.raj.jaiswal@harshrajjaiswal.com.np',
+    email: 'harshrajjaiswal@gmail.com',
     website: 'harshrajjaiswal.com.np',
     github: 'github.com/HarshRJ176',
     linkedin: 'linkedin.com/in/harshrj',
