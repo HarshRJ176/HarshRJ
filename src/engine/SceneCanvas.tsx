@@ -3,22 +3,29 @@ import { Canvas } from '@react-three/fiber';
 import { PerformanceMonitor } from '@react-three/drei';
 import * as THREE from 'three';
 
+import { useIsMobile } from '../hooks/useIsMobile';
+
 interface SceneCanvasProps {
   children: ReactNode;
 }
 
 /**
- * Owns the WebGL surface only.
+ * Owns the WebGL surface only. Render cost is tiered by device: phones get
+ * a lower starting/ceiling DPR and skip antialiasing, since both are
+ * disproportionately expensive on mobile GPUs relative to the visual gain.
  */
 export function SceneCanvas({ children }: SceneCanvasProps) {
-  const [dpr, setDpr] = useState(0.9);
+  const isMobile = useIsMobile();
+  const [dpr, setDpr] = useState(isMobile ? 0.75 : 0.9);
+  const dprFloor = isMobile ? 0.6 : 0.8;
+  const dprCeiling = isMobile ? 1 : 1.2;
 
   return (
     <Canvas
       className="scene-canvas-root"
       dpr={dpr}
       gl={{
-        antialias: true,
+        antialias: !isMobile,
         alpha: true,
         powerPreference: 'high-performance',
         toneMapping: THREE.ACESFilmicToneMapping,
@@ -31,8 +38,8 @@ export function SceneCanvas({ children }: SceneCanvasProps) {
       }}
     >
       <PerformanceMonitor
-        onIncline={() => setDpr((current) => Math.min(1.2, current + 0.08))}
-        onDecline={() => setDpr((current) => Math.max(0.8, current - 0.08))}
+        onIncline={() => setDpr((current) => Math.min(dprCeiling, current + 0.08))}
+        onDecline={() => setDpr((current) => Math.max(dprFloor, current - 0.08))}
       />
       <Suspense fallback={null}>{children}</Suspense>
     </Canvas>

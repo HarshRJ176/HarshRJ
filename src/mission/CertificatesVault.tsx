@@ -53,7 +53,7 @@ export function CertificatesVault() {
 
   return (
     <section id="certificates" ref={sectionRef} className="mission-section">
-      <SectionHeading code="05" kicker="Certificates" title="Verified Credentials" />
+      <SectionHeading code="06" kicker="Certificates" title="Verified Credentials" />
 
       <div className="section-with-rail">
         <div className="section-main">

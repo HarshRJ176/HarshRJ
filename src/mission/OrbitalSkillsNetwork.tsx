@@ -10,7 +10,7 @@ export function OrbitalSkillsNetwork() {
 
   return (
     <section id="skills" ref={sectionRef} className="mission-section">
-      <SectionHeading code="06" kicker="Skills" title="Technical Skills" />
+      <SectionHeading code="07" kicker="Skills" title="Technical Skills" />
 
       <div className="skills-grid" data-reveal>
         {skillClusters.map((cluster) => (

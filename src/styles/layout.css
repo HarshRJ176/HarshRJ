@@ -28,6 +28,61 @@
   color: var(--accent);
 }
 
+.nav-dock-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  flex-shrink: 0;
+  background: transparent;
+  border: none;
+}
+
+.nav-dock-toggle-bars {
+  position: relative;
+  display: block;
+  width: 1.35rem;
+  height: 0.9rem;
+}
+
+.nav-dock-toggle-bars span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--text-soft);
+  transition: transform var(--duration-fast) var(--ease-out),
+    opacity var(--duration-fast) var(--ease-out), top var(--duration-fast) var(--ease-out);
+}
+
+.nav-dock-toggle-bars span:nth-child(1) {
+  top: 0;
+}
+
+.nav-dock-toggle-bars span:nth-child(2) {
+  top: 0.42rem;
+}
+
+.nav-dock-toggle-bars span:nth-child(3) {
+  top: 0.84rem;
+}
+
+.nav-dock-toggle-bars.is-open span:nth-child(1) {
+  top: 0.42rem;
+  transform: rotate(45deg);
+}
+
+.nav-dock-toggle-bars.is-open span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-dock-toggle-bars.is-open span:nth-child(3) {
+  top: 0.42rem;
+  transform: rotate(-45deg);
+}
+
 .nav-dock ul {
   display: flex;
   flex-direction: row;

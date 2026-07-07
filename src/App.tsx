@@ -10,6 +10,7 @@ import { MissionBrief } from './mission/MissionBrief';
 import { ExperienceBay } from './mission/ExperienceBay';
 import { EducationTrack } from './mission/EducationTrack';
 import { ProjectsDockingBays } from './mission/ProjectsDockingBays';
+import { ResearchArchive } from './mission/ResearchArchive';
 import { CertificatesVault } from './mission/CertificatesVault';
 import { OrbitalSkillsNetwork } from './mission/OrbitalSkillsNetwork';
 import { ContactTerminal } from './mission/ContactTerminal';
@@ -51,6 +52,7 @@ export function App() {
         <ExperienceBay />
         <EducationTrack />
         <ProjectsDockingBays />
+        <ResearchArchive />
         <CertificatesVault />
         <OrbitalSkillsNetwork />
         <ContactTerminal />

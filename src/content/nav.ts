@@ -13,7 +13,8 @@ export const missionSections: MissionSection[] = [
   { id: 'experience', label: 'Experience', code: '02' },
   { id: 'education', label: 'Education', code: '03' },
   { id: 'projects', label: 'Engineering Projects', code: '04' },
-  { id: 'certificates', label: 'Certificates', code: '05' },
-  { id: 'skills', label: 'Skills', code: '06' },
-  { id: 'contact', label: 'Contact', code: '07' },
+  { id: 'research', label: 'Research', code: '05' },
+  { id: 'certificates', label: 'Certificates', code: '06' },
+  { id: 'skills', label: 'Skills', code: '07' },
+  { id: 'contact', label: 'Contact', code: '08' },
 ];

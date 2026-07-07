@@ -11,7 +11,7 @@ export function ContactTerminal() {
 
   return (
     <section id="contact" ref={sectionRef} className="mission-section mission-section-final">
-      <SectionHeading code="07" kicker="Contact" title="Open Channel" />
+      <SectionHeading code="08" kicker="Contact" title="Open Channel" />
 
       <div className="contact-list panel" data-reveal>
         {contactChannels.map((channel) => (
