@@ -9,7 +9,7 @@ import { HoverDetailRail, type HoverDetail } from '../ui/HoverDetailRail';
 
 const kindLabel: Record<(typeof experience)[number]['kind'], string> = {
   education: 'Education',
-  role: 'Role',
+  role: 'Internship',
   research: 'Research',
 };
 
@@ -31,14 +31,18 @@ export function ExperienceBay() {
       description: previewEntry.summary,
       bullets: previewEntry.details,
       meta: previewEntry.period,
+      actions: previewEntry.attachments?.map((attachment) => ({
+        label: attachment.label,
+        href: attachment.href,
+      })),
     };
   }, [previewEntry]);
 
   return (
     <section id="experience" ref={sectionRef} className="mission-section">
-      <SectionHeading code="02" kicker="Experience" title="Maintenance Log" />
+      <SectionHeading code="02" kicker="Experience" title="Professional Experience" />
 
-      <div className="section-with-rail">
+      <div className="section-with-rail section-with-rail-experience">
         <div className="section-main">
           <ol className="experience-timeline">
             {experience.map((entry) => (
@@ -59,12 +63,8 @@ export function ExperienceBay() {
                   <h3>{entry.title}</h3>
                   <p className="experience-org">{entry.org}</p>
                   <p>{entry.summary}</p>
-                  <button
-                    type="button"
-                    className="detail-trigger"
-                    onClick={() => setActiveId(entry.id)}
-                  >
-                    Pin detail
+                  <button type="button" className="detail-trigger" onClick={() => setActiveId(entry.id)}>
+                    View details
                   </button>
                 </Panel>
               </li>
@@ -75,10 +75,10 @@ export function ExperienceBay() {
         <HoverDetailRail
           code="LIVE"
           kicker="Experience detail"
-          title="Operational record"
-          hint="Hover a timeline card to inspect the full operational note. Click a card to pin the detail in a modal."
+          title="Experience snapshot"
+          hint="Hover the internship card to inspect the full note. Click to pin the detail in a modal."
           detail={detail}
-          className="section-rail"
+          className="section-rail section-rail-experience"
         />
       </div>
 
@@ -88,6 +88,10 @@ export function ExperienceBay() {
         subtitle={modalEntry?.org}
         description={modalEntry?.summary ?? ''}
         bullets={modalEntry?.details ?? []}
+        actions={modalEntry?.attachments?.map((attachment) => ({
+          label: attachment.label,
+          href: attachment.href,
+        }))}
         onClose={() => setActiveId(null)}
       />
     </section>

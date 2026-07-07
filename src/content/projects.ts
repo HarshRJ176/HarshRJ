@@ -5,93 +5,78 @@ export interface Project {
   summary: string;
   details: string[];
   stack: string[];
-  status: 'operational' | 'in-development' | 'archived';
+  report?: {
+    label: string;
+    href: string;
+  };
 }
 
 /**
- * Projects / Docking Bays.
- * Ordered newest to oldest so the section reads like a technical work log.
+ * Engineering projects ordered newest to oldest.
  */
 export const projects: Project[] = [
   {
-    id: 'pla-solar-uav-structure',
-    callsign: 'BAY 01',
-    title: 'Finite Element Structural Analysis of a Lightweight PLA Solar UAV Frame',
+    id: 'solar-uav-design',
+    callsign: 'Project 01',
+    title: 'Design and Development of Solar-Powered Unmanned Air Vehicle',
     summary:
-      'Structural optimisation study for a lightweight solar UAV frame, focused on mass reduction while keeping stiffness and load paths within acceptable flight margins.',
+      'Designed and developed a solar-powered UAV focused on renewable energy integration, lightweight structures, aerodynamic efficiency, and mission endurance.',
     details: [
-      'Mapped load paths and stress concentration zones to identify where material could be removed without collapsing stiffness.',
-      'Used the analysis to drive an actual lightweight design decision, not as a standalone visual exercise.',
-      'Prepared the work as publication-track output with comparison figures, validation notes, and reproducible assumptions.',
+      'The project covered airfoil selection, structural design, propulsion sizing, battery and solar power integration, payload estimation, and aerodynamic analysis.',
+      'The final design emphasized efficient energy utilization while maintaining structural integrity and mission capability.',
+      'Built a complete UAV concept from airfoil selection to full structure integration.',
     ],
-    stack: ['FEA', 'Structural Optimisation', 'PLA', 'Lightweight Design'],
-    status: 'operational',
-  },
-  {
-    id: 'solar-capstone',
-    callsign: 'BAY 02',
-    title: 'Capstone Design-1: Solar UAV Performance Evaluation',
-    summary:
-      'Capstone-level conceptual and performance evaluation of a solar-powered UAV, used to consolidate airframe, propulsion, endurance, and system thinking into one project narrative.',
-    details: [
-      'Combined the UAV concept with power-budget logic, endurance estimation, and performance interpretation.',
-      'Senior-level design synthesis project completed at Chandigarh University.',
-      'Bridged raw conceptual design work with publication-oriented analysis.',
-      'Connected geometry, propulsion, energy budget, and mission intent into a single integrated design frame.',
-    ],
-    stack: ['Capstone', 'Performance Evaluation', 'Systems Integration', 'Solar UAV'],
-    status: 'operational',
-  },
-  {
-    id: 'dual-bell-nozzle',
-    callsign: 'BAY 03',
-    title: 'Dual-Bell Nozzle Performance Study',
-    summary:
-      'Propulsion geometry study focused on dual-bell transition behaviour, flow separation control, and performance across pressure regimes.',
-    details: [
-      'Studied how nozzle shape affects flow switching, separation behaviour, and performance stability.',
-      'Extended earlier nozzle propulsion work into dual-bell transition behaviour specifically.',
-    ],
-    stack: ['Nozzle Design', 'Flow Separation', 'Performance Analysis', 'CFD'],
-    status: 'in-development',
-  },
-  {
-    id: 'aerospike-coldflow',
-    callsign: 'BAY 04',
-    title: 'Aerospike Nozzle Design and Cold-Flow Analysis',
-    summary:
-      'Comparative nozzle study built around cold-flow performance, expansion behaviour, and pressure-driven thrust characteristics under altitude-compensating geometries.',
-    details: [
-      'Used the study to understand how the aerospike concept behaves relative to conventional nozzles.',
-      'Focused on flow structure, pressure-ratio sweep logic, and thrust interpretation.',
-    ],
-    stack: ['CFD', 'Cold-Flow Analysis', 'Fluid Mechanics', 'ANSYS', 'Propulsion'],
-    status: 'operational',
+    stack: ['SolidWorks', 'ANSYS Fluent', 'CFD', 'Aerodynamics', 'UAV Design'],
+    report: {
+      label: 'Open project report',
+      href: '/documents/Solar-UAV-Project-Report.pdf',
+    },
   },
   {
     id: 'hydrogen-aircraft-concept',
-    callsign: 'BAY 05',
-    title: 'Hydrogen-Powered Short-Range Aircraft Concept',
+    callsign: 'Project 02',
+    title: 'Velocity Vista: Conceptual Design of a Novel Hydrogen-Powered Short-Range Aircraft',
     summary:
-      'Conceptual aircraft design study using a hydrogen propulsion architecture for a short-range transport mission, with emphasis on configuration trade-offs and mass balance.',
+      'Designed a conceptual hydrogen-powered passenger aircraft focused on sustainable aviation, cryogenic hydrogen storage, aircraft sizing, and performance optimization.',
     details: [
-      'Applied conceptual design methods to aircraft-level trade studies.',
-      'Built judgment around configuration, payload, range, and viability constraints.',
+      'Developed a complete conceptual aircraft by studying hydrogen propulsion, aircraft configuration, weight estimation, drag analysis, performance calculations, and systems integration.',
+      'The project explored sustainable alternatives for future commercial aviation.',
+      'Built a systems-level hydrogen aircraft concept with performance and sustainability trade-offs clearly evaluated.',
     ],
-    stack: ['Conceptual Design', 'Aircraft Sizing', 'Mission Analysis', 'Trade Studies'],
-    status: 'archived',
+    stack: ['Aircraft Design', 'Hydrogen Propulsion', 'Performance Analysis', 'Weight Estimation', 'SolidWorks'],
+    report: {
+      label: 'Open project report',
+      href: '/documents/Velocity-Vista-Project-Report.pdf',
+    },
   },
   {
-    id: 'solar-uav-design',
-    callsign: 'BAY 06',
-    title: 'Solar-Powered UAV Design and Development',
+    id: 'aerospike-coldflow',
+    callsign: 'Project 03',
+    title: 'Design and Cold Flow Analysis of Aerospike Nozzle',
     summary:
-      'End-to-end solar UAV concept covering airframe sizing, propulsion matching, power budgeting, endurance reasoning, and CFD-led iteration for a lightweight mission profile.',
+      'Investigated the aerodynamic behaviour of an aerospike rocket nozzle using computational fluid dynamics to study pressure distribution, expansion behaviour, and altitude-compensating performance.',
     details: [
-      'Integrated airframe, propulsion, and power-budget analysis into a single design-to-implementation workflow.',
-      'CFD-led iteration on the airframe shape supported the final lightweight mission profile.',
+      'Performed computational analysis to evaluate nozzle performance under different operating conditions.',
+      'The project focused on pressure variation, flow characteristics, nozzle efficiency, and propulsion behaviour through CFD-based analysis.',
+      'Strengthened CFD-based propulsion analysis and nozzle-performance interpretation.',
     ],
-    stack: ['SolidWorks', 'ANSYS Fluent', 'CFD', 'Power Budgeting', 'UAV Design'],
-    status: 'operational',
+    stack: ['ANSYS Fluent', 'CFD', 'Rocket Propulsion', 'Aerodynamics'],
+  },
+  {
+    id: 'dual-bell-nozzle',
+    callsign: 'Project 04',
+    title: 'Design and Performance Optimization of Dual Bell Nozzle',
+    summary:
+      'Designed and analysed a dual-bell rocket nozzle to investigate thrust performance, flow transition, and pressure distribution under varying atmospheric conditions.',
+    details: [
+      'The project focused on dual-bell nozzle geometry, contour optimisation, CFD analysis, and propulsion performance evaluation.',
+      'The work explored how nozzle configuration influences flow behaviour and overall engine efficiency under changing operating conditions.',
+      'Improved understanding of advanced rocket nozzle optimisation and flow transition behaviour.',
+    ],
+    stack: ['ANSYS Fluent', 'Rocket Propulsion', 'CFD', 'Nozzle Design'],
+    report: {
+      label: 'Open project report',
+      href: '/documents/Dual-Bell-Nozzle-Project-Report.pdf',
+    },
   },
 ];

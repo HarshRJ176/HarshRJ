@@ -1,16 +1,27 @@
 import { useEffect, useRef } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 
+import type { DetailAction } from './HoverDetailRail';
+
 interface DetailModalProps {
   open: boolean;
   title: string;
   subtitle?: string;
   description: string;
   bullets: string[];
+  actions?: DetailAction[];
   onClose: () => void;
 }
 
-export function DetailModal({ open, title, subtitle, description, bullets, onClose }: DetailModalProps) {
+export function DetailModal({
+  open,
+  title,
+  subtitle,
+  description,
+  bullets,
+  actions,
+  onClose,
+}: DetailModalProps) {
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const previouslyFocused = useRef<HTMLElement | null>(null);
 
@@ -76,6 +87,22 @@ export function DetailModal({ open, title, subtitle, description, bullets, onClo
                 <li key={bullet}>{bullet}</li>
               ))}
             </ul>
+
+            {actions?.length ? (
+              <div className="detail-action-row detail-modal-actions">
+                {actions.map((action) => (
+                  <a
+                    key={`${title}-${action.label}`}
+                    className="detail-action-link"
+                    href={action.href}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {action.label}
+                  </a>
+                ))}
+              </div>
+            ) : null}
           </motion.div>
         </motion.div>
       )}

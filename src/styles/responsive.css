@@ -84,6 +84,10 @@
     padding: 1.1rem;
   }
 
+  .hero-copy {
+    width: min(100%, 42rem);
+  }
+
   .hero-headline {
     max-width: 100%;
   }

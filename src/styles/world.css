@@ -34,7 +34,7 @@
 
 .hero-scroll-span {
   position: relative;
-  height: 190vh;
+  height: 165vh;
 }
 
 .hero-scroll-sticky {
@@ -65,7 +65,7 @@
 }
 
 .hero-copy {
-  width: min(680px, 92vw);
+  width: min(760px, 94vw);
   text-align: left;
   pointer-events: auto;
   padding: 0;
@@ -76,8 +76,8 @@
 
 .hero-photo-frame {
   position: relative;
-  width: clamp(180px, 33vw, 600px);
-  height: clamp(180px, 33vw, 600px);
+  width: clamp(220px, 28vw, 420px);
+  height: clamp(220px, 28vw, 420px);
   margin-bottom: 1.4rem;
   border-radius: 50%;
 }
@@ -134,7 +134,7 @@
 }
 
 .hero-name {
-  font-size: clamp(2.85rem, 5.4vw, 4.45rem);
+  font-size: clamp(2.55rem, 4.7vw, 4rem);
   line-height: 0.92;
   margin: 0 0 0.72rem;
   letter-spacing: -0.07em;
@@ -154,14 +154,14 @@
 }
 
 .hero-headline {
-  font-size: clamp(1.02rem, 1.7vw, 1.28rem);
+  font-size: clamp(0.98rem, 1.45vw, 1.18rem);
   font-family: var(--font-display);
   font-weight: 600;
   line-height: 1.62;
   color: var(--text);
   opacity: 0.98;
   margin-bottom: 1.15rem;
-  max-width: 52ch;
+  max-width: 60ch;
 }
 
 .hero-bullet-list {

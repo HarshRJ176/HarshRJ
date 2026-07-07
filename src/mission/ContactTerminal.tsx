@@ -29,7 +29,7 @@ export function ContactTerminal() {
       </div>
 
       <p className="terminal-footer">
-        {profile.location} · Aerospace engineering portfolio · {new Date().getFullYear()}
+        Aerospace engineering portfolio · {new Date().getFullYear()}
       </p>
     </section>
   );

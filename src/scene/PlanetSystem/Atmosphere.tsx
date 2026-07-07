@@ -35,18 +35,15 @@ const fragmentShader = /* glsl */ `
     sunFactor = pow(sunFactor, 1.8);
 
     vec3 color = mix(uColorShadow, uColorLit, sunFactor);
-    float intensity = rim * mix(0.015, 0.32, sunFactor);
+    float intensity = rim * mix(0.008, 0.16, sunFactor);
 
     gl_FragColor = vec4(color, intensity * uOpacity);
   }
 `;
 
 /**
- * Earth's atmospheric limb glow. Deliberately subtle and blue-only —
- * no near-white tones — so it never reads as a bright outline/border at
- * the sphere's edge, just a faint sunlit haze. Intensity is capped low
- * and the Fresnel falloff is sharp so it only shows right at the
- * silhouette, not as a ring around the whole disc.
+ * Earth's atmospheric limb glow. Kept deliberately subtle and muted so
+ * it reads as a soft rim rather than a bright border at the sphere's edge.
  */
 export function Atmosphere() {
   const meshRef = useRef<THREE.Mesh>(null);
@@ -57,8 +54,8 @@ export function Atmosphere() {
 
   const uniforms = useMemo(
     () => ({
-      uColorLit: { value: new THREE.Color('#7fb8e0') },
-      uColorShadow: { value: new THREE.Color('#1c3f6e') },
+      uColorLit: { value: new THREE.Color('#8ea1b4') },
+      uColorShadow: { value: new THREE.Color('#20334a') },
       uLightDir: { value: new THREE.Vector3(0, 0, 1) },
       uOpacity: { value: 0 },
     }),

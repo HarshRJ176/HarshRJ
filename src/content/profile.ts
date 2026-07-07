@@ -25,7 +25,7 @@ export const profile = {
   name: 'Harsh Raj Jaiswal',
   callsign: 'Harsh Raj Jaiswal',
   role: 'Aerospace Engineer',
-  focus: 'Orbital Mechanics · CFD · Structural Analysis · UAV Systems',
+  focus: 'CFD · Propulsion · UAV Systems · Orbital Mechanics',
   location: 'Kathmandu, Nepal',
   education: 'B.E. Aerospace Engineering, Chandigarh University — Class of 2025',
   // Path to your headshot, served from /public. Drop a real photo at
@@ -33,14 +33,13 @@ export const profile = {
   // automatically — until then, HeroPhoto shows a clean monogram fallback.
   photo: '/profile-photo.jpg',
   heroHeadline:
-    'Simulation-led aerospace engineering across orbital mechanics, CFD, structural analysis, and UAV systems — models built to be tested and validated, not just visualised.',
-  // Keep this to 2 short facts, not full sentences — the Experience and
-  // Education sections below already cover the full detail. This is a
-  // recruiter's 5-second scan, not a second resume.
-  heroBullets: [,
+    'Aerospace engineer focused on CFD, propulsion, UAV systems, and orbital mechanics. Building stronger technical depth through analysis, project work, and practical engineering exposure.',
+  heroBullets: [
+    'Simulation-first engineering mindset across aerospace design and analysis',
+    'Hands-on exposure to aircraft maintenance, UAV concepts, and propulsion studies',
   ],
   missionBrief:
-    'A simulation-first approach to aerospace engineering: model the system, run the analysis, validate against real constraints. Work spans structural analysis, CFD, orbital mechanics, and UAV power systems, backed by hands-on maintenance experience with transport aircraft at Nepal Airlines Corporation.',
+    'I am an aerospace engineer with a strong interest in simulation-led design, propulsion, UAV systems, and orbital mechanics. My work is shaped by analysis, technical iteration, and practical engineering exposure under real constraints.',
   missionCards: [
     {
       label: 'Method',
@@ -48,28 +47,19 @@ export const profile = {
     },
     {
       label: 'Focus',
-      value: 'Orbital mechanics, CFD, structures, UAV systems',
+      value: 'CFD, propulsion, UAV systems, orbital mechanics',
     },
     {
       label: 'Direction',
-      value: 'Applications, research, publication readiness',
+      value: 'Project work, technical depth, practical exposure',
     },
   ] satisfies ProfileMetric[],
   contact: {
     address: 'Kathmandu, Nepal',
-    // Add your real number here, e.g. '+977 98XXXXXXX' — left blank on
-    // purpose rather than shipping a fake placeholder. ContactTerminal
-    // automatically skips any channel with an empty value, so this row
-    // simply won't appear until you fill it in.
     phone: '+977 9821136610',
-    // NOTE: your CNAME resolves to harshrajjaiswal.com.np, not harshj.com.np.
-    // This email is on the OLD domain — if that domain isn't live anymore,
-    // messages to this address will silently bounce. Verify this inbox
-    // still works, or switch it to an address on your current domain.
     email: 'harsh.raj.jaiswal@harshrajjaiswal.com.np',
     website: 'harshrajjaiswal.com.np',
     github: 'github.com/HarshRJ176',
-    // Verify this matches your actual LinkedIn handle — unconfirmed.
     linkedin: 'linkedin.com/in/harshrj',
     resume: resumePdf,
   } satisfies ContactProfile,

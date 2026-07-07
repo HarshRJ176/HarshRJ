@@ -35,10 +35,10 @@ export function Earth() {
       <meshStandardMaterial
         map={dayMap}
         normalMap={normalMap}
-        roughness={0.97}
-        metalness={0.01}
-        emissive={new THREE.Color('#07111c')}
-        emissiveIntensity={0.04}
+        roughness={0.99}
+        metalness={0.005}
+        emissive={new THREE.Color('#061019')}
+        emissiveIntensity={0.022}
       />
     </mesh>
   );

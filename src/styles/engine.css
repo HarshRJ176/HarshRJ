@@ -8,6 +8,10 @@
   position: fixed;
   inset: 0;
   z-index: var(--z-scene);
+  background:
+    radial-gradient(circle at 20% 18%, rgba(103, 220, 255, 0.08), transparent 30%),
+    radial-gradient(circle at 78% 22%, rgba(217, 186, 118, 0.05), transparent 20%),
+    linear-gradient(180deg, #02070d 0%, #030912 46%, #010205 100%);
 }
 
 .scene-canvas-root {

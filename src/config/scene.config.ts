@@ -18,10 +18,10 @@ export const assetPaths = {
 export const earthConfig = {
   radius: 1.34,
   cloudRadiusOffset: 0.01,
-  atmosphereRadiusOffset: 0.045,
+  atmosphereRadiusOffset: 0.025,
   rotationSpeed: 0.035,
   axialTilt: 0.34,
-  dockedPosition: [-2.35, -1.65, 0] as [number, number, number],
+  dockedPosition: [-2.35, -1.58, 0] as [number, number, number],
   introPosition: [2.95, -0.14, 0] as [number, number, number],
   orbit: {
     semiMajor: 3.05,

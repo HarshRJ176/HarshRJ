@@ -1,5 +1,10 @@
 import { AnimatePresence, motion } from 'framer-motion';
 
+export interface DetailAction {
+  label: string;
+  href: string;
+}
+
 export interface HoverDetail {
   title: string;
   subtitle?: string;
@@ -7,6 +12,7 @@ export interface HoverDetail {
   bullets: string[];
   tags?: string[];
   meta?: string;
+  actions?: DetailAction[];
 }
 
 interface HoverDetailRailProps {
@@ -56,6 +62,21 @@ export function HoverDetailRail({ code, kicker, title, hint, detail, className =
               </ul>
             ) : null}
             {detail.meta ? <p className="hover-detail-rail-meta">{detail.meta}</p> : null}
+            {detail.actions?.length ? (
+              <div className="detail-action-row">
+                {detail.actions.map((action) => (
+                  <a
+                    key={`${detail.title}-${action.label}`}
+                    className="detail-action-link"
+                    href={action.href}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {action.label}
+                  </a>
+                ))}
+              </div>
+            ) : null}
           </motion.div>
         ) : (
           <motion.div

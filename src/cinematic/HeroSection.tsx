@@ -9,9 +9,8 @@ interface HeroSectionProps {
 
 /**
  * The hero is the primary recruiter-facing summary block — kept
- * deliberately tight. Full detail (degree specifics, internship
- * description, research areas) lives in the Education/Experience/Research
- * sections below; this is the 5-second scan, not a second resume.
+ * deliberately tight. Full detail lives in the sections below; this is
+ * the first impression, not a second resume.
  */
 export const HeroSection = forwardRef<HTMLElement, HeroSectionProps>(function HeroSection(
   { heroTextRef },
@@ -29,23 +28,6 @@ export const HeroSection = forwardRef<HTMLElement, HeroSectionProps>(function He
             {profile.role} <span className="hero-role-divider">·</span> {profile.focus}
           </p>
           <p className="hero-headline">{profile.heroHeadline}</p>
-
-          <ul className="hero-bullet-list" aria-label="Profile highlights">
-            {profile.heroBullets.map((bullet) => (
-              <li key={bullet}>{bullet}</li>
-            ))}
-          </ul>
-
-          <div className="hero-metric-grid" aria-label="Quick profile facts">
-            <div>
-              <span className="hero-metric-value">{profile.location}</span>
-              <span className="hero-metric-label">Base</span>
-            </div>
-            <div>
-              <span className="hero-metric-value">Research + Applications</span>
-              <span className="hero-metric-label">Currently</span>
-            </div>
-          </div>
         </div>
       </div>
     </section>

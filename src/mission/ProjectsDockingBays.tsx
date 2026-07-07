@@ -7,12 +7,6 @@ import { useScrollReveal } from '../hooks/useScrollReveal';
 import { DetailModal } from '../ui/DetailModal';
 import { HoverDetailRail, type HoverDetail } from '../ui/HoverDetailRail';
 
-const statusLabel: Record<(typeof projects)[number]['status'], string> = {
-  operational: 'Operational',
-  'in-development': 'In Development',
-  archived: 'Archived',
-};
-
 export function ProjectsDockingBays() {
   const sectionRef = useRef<HTMLElement>(null);
   useScrollReveal(sectionRef);
@@ -25,19 +19,28 @@ export function ProjectsDockingBays() {
 
   const detail = useMemo<HoverDetail | null>(() => {
     if (!previewProject) return null;
+    const actions = previewProject.report
+      ? [{ label: previewProject.report.label, href: previewProject.report.href }]
+      : [];
+
     return {
       title: previewProject.title,
       subtitle: previewProject.callsign,
       description: previewProject.summary,
       bullets: previewProject.details,
       tags: previewProject.stack,
-      meta: statusLabel[previewProject.status],
+      meta: 'Completed engineering project',
+      actions,
     };
   }, [previewProject]);
 
+  const modalActions = modalProject?.report
+    ? [{ label: modalProject.report.label, href: modalProject.report.href }]
+    : [];
+
   return (
     <section id="projects" ref={sectionRef} className="mission-section">
-      <SectionHeading code="04" kicker="Projects" title="Selected Work" />
+      <SectionHeading code="04" kicker="Projects" title="Engineering Projects" />
 
       <div className="section-with-rail">
         <div className="section-main">
@@ -54,15 +57,12 @@ export function ProjectsDockingBays() {
                 onBlur={() => setHoveredId(activeId ?? defaultId)}
               >
                 <div className="docking-bay-card-header">
-                  <span className="docking-bay-callsign">{project.callsign}</span>
-                  <span className={`status-pill status-${project.status}`}>
-                    {statusLabel[project.status]}
-                  </span>
+                  <span className="project-card-code">{project.callsign}</span>
                 </div>
                 <h3>{project.title}</h3>
                 <p>{project.summary}</p>
                 <button type="button" className="detail-trigger" onClick={() => setActiveId(project.id)}>
-                  Pin detail
+                  View details
                 </button>
                 <ul className="tech-tag-list">
                   {project.stack.map((tech) => (
@@ -77,7 +77,7 @@ export function ProjectsDockingBays() {
         <HoverDetailRail
           code="LIVE"
           kicker="Project detail"
-          title="Engineering work log"
+          title="Project overview"
           hint="Hover a project card to inspect the technical summary, then click to pin the full note in a modal."
           detail={detail}
           className="section-rail"
@@ -90,6 +90,7 @@ export function ProjectsDockingBays() {
         subtitle={modalProject?.callsign}
         description={modalProject?.summary ?? ''}
         bullets={modalProject?.details ?? []}
+        actions={modalActions}
         onClose={() => setActiveId(null)}
       />
     </section>
