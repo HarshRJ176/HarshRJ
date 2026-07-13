@@ -12,17 +12,13 @@
     gap: 0.6rem;
   }
 
-  .nav-dock-brand {
-    font-size: 0.68rem;
-    letter-spacing: 0.14em;
-  }
-
   .hero-scroll-sticky {
     padding-left: var(--content-pad);
   }
 
   .mission-brief-stats,
-  .skills-grid {
+  .skills-grid,
+  .contact-grid {
     grid-template-columns: 1fr;
   }
 
@@ -32,51 +28,14 @@
 }
 
 /*
- * Mobile navigation: below 780px the inline link row doesn't fit 8
- * sections legibly (the old fallback just hid the labels and left bare
- * "01 02 03..." codes, which isn't real navigation). This swaps to a
- * hamburger toggle + full-width drawer showing the actual section names.
+ * The nav panel (layout.css .nav-overlay-panel) already scales via clamp(),
+ * so it needs no per-breakpoint rebuild — just a touch less top padding on
+ * very short/small phones so 8 sections + footer fit comfortably above the
+ * panel's own scroll kicking in.
  */
-@media (max-width: 780px) {
-  .nav-dock-toggle {
-    display: inline-flex;
-  }
-
-  .nav-dock ul {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0;
-    max-height: 0;
-    overflow: hidden;
-    background: rgba(6, 11, 20, 0.97);
-    backdrop-filter: blur(18px);
-    border-bottom: 1px solid var(--border);
-    transition: max-height 0.3s var(--ease-out);
-  }
-
-  .nav-dock ul.is-open {
-    max-height: 80vh;
-    overflow-y: auto;
-  }
-
-  .nav-dock ul li {
-    width: 100%;
-  }
-
-  .nav-dock a {
-    width: 100%;
-    padding: 0.95rem 1.35rem;
-    font-size: 0.85rem;
-    border-bottom: 1px solid var(--border);
-    border-radius: 0;
-  }
-
-  .nav-dock a.is-active {
-    background: rgba(255, 255, 255, 0.04);
+@media (max-width: 480px) {
+  .nav-overlay-panel {
+    padding-top: 4.75rem;
   }
 }
 

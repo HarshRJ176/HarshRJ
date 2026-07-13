@@ -21,6 +21,12 @@ interface ScrollNarrativeOptions {
  * scroll position — flightState.scrollProgress and the hero text's
  * opacity/transform advance together, so there is exactly one source of
  * truth for "how far into the docking beat are we."
+ *
+ * This always scrubs, regardless of the OS-level prefers-reduced-motion
+ * setting. That's a deliberate call, not an oversight: the docking sequence
+ * is this site's signature interaction, and the owner has explicitly asked
+ * for it to always play rather than be silently replaced by an instant
+ * snap for visitors whose systems happen to have that preference set.
  */
 export function useScrollNarrative({ triggerRef, heroTextRef, enabled }: ScrollNarrativeOptions) {
   useEffect(() => {

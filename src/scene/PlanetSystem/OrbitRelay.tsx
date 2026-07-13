@@ -15,7 +15,7 @@ export function OrbitRelay() {
   const ringRef = useRef<THREE.Mesh>(null);
   const satelliteRef = useRef<THREE.Group>(null);
 
-  useFrame((state: any) => {
+  useFrame((state) => {
     const t = flightState.scrollProgress;
     const worldTime = state.clock.elapsedTime;
 
